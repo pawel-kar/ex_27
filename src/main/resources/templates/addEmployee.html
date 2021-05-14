@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj pracownika</title>
+</head>
+
+<body>
+
+<form th:action="@{/addEmployee}" method="post" th:object="${employee}">
+    <label for="firstName">Imie </label>
+    <div id="firstName">
+        <input type="text" th:field="*{firstName}"/>
+    </div>
+
+    <label for="lastName">Nazwisko </label>
+    <div id="lastName">
+        <input type="text" th:field="*{lastName}"/>
+    </div>
+
+    <label for="birthDate">Data urodzenia </label>
+    <div id="birthDate">
+        <input type="date" th:field="*{birthDate}"/>
+    </div>
+
+    <label for="email">Email</label>
+    <div id="email">
+        <input type="email" th:field="*{email}"/>
+    </div>
+
+    <label for="isSignedUpToNewsletter">Czy zapisany do newslettera</label>
+    <div id="isSignedUpToNewsletter">
+        <input class="form-check-input" type="checkbox" value="" th:field="*{signedUpToNewsletter}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Dodaj pracownika</button>
+</form>
+
+</body>
+</html>
